@@ -1,0 +1,498 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  margin: 0px;
+  background-color: white;
+  height: 95px;
+  color: black;
+  border-radius: 10px;
+}
+
+/* Navbar CSS Starts */
+.topnav {
+  border-bottom: 2px solid rgba(71, 70, 70, 0.2);
+  background-color: rgba(15, 77, 234, 0.396);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 95px;
+  position: relative;
+  z-index: 1;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+/* .topnav #myLinks {
+  display: none;
+  margin-top: 60px;
+} */
+
+.topnav a {
+  text-decoration: none;
+  color: black;
+}
+/* 
+.topnav .whole {
+  margin-top: 20px;
+} */
+
+/* 
+.topnav .extra {
+  background-color: rgba(20, 73, 207, 0.396);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+} */
+
+.topnav .tile {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  font-family: "Franklin Gothic", Arial, sans-serif;
+}
+
+.topnav .options {
+  margin: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.topnav .tile h2 {
+  margin-top: 15px;
+  font-size: 35px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.tile .img{
+  width: 200px;
+  height: 200px;
+  border-radius: 75%;
+}
+
+/* .topnav .searchbar {
+  width: 250px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.topnav .searchbar input {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 18px;
+}
+.topnav .searchbar input:focus{
+  outline: 2px red solid;
+} */
+/* .topnav .searchbar input:focus{
+  border: 2px yellow solid;
+} */
+/* 
+.topnav .searchbar:focus{
+  border-color: #e8e925;
+}
+
+.topnav .searchbar button {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+} */
+
+/* Search Bar CSS Starts */
+
+form.example input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+  margin-top: 10px;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Search Bar CSS Ends */
+
+.topnav img {
+  width: 70px;
+  height: 70px;
+  border-radius: 75%;
+}
+
+/* Navbar CSS Ends */
+
+/* Emergency Portion CSS Starts */
+.emergency {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin-top: 30px; */
+  /* margin-bottom: 30px; */
+  background-color: rgba(234, 255, 0, 0.593);
+}
+
+.emergency span {
+  font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  color: black;
+}
+/* Emergency Portion CSS Ends */
+
+/* SOS Button CSS Starts */
+.emergency .sos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emergency .sos button {
+  margin: 20px;
+  padding: 50px 60px;
+  border-radius: 20em;
+  background-color: rgba(218, 46, 46, 0.67);
+  color: antiquewhite;
+  font-size: 30px;
+  font-weight: bold;
+  transition-duration: 0.45s;
+  cursor: pointer;
+}
+
+.emergency .sos button:hover {
+  box-shadow: 1em;
+  background-color: rgba(44, 45, 130, 0.844);
+}
+
+/* SOS Button CSS Ends */
+
+/* Card CSS Starts */
+
+.hospitals {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 60px;
+  gap: 30px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 400px;
+  width: 25%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 25px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: rgba(0, 187, 255, 0.177);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  background-color: black;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.info {
+  position: relative;
+  padding: 2px 16px;
+}
+
+/* Card CSS Starts */
+
+/* Contact Us Part CSS Starts*/
+.background {
+  display: flex;
+  min-height: 100vh;
+}
+
+.con {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: #3e3e3e;
+  border-radius: 15px;
+}
+
+.screen:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ea1d6f;
+  font-size: 26px;
+}
+
+.app-title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: #ea1d6f;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 8px;
+  color: #888;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+}
+
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.app-form-control::placeholder {
+  color: #666;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+.app-form-button {
+  background: none;
+  border: none;
+  color: #ea1d6f;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-form-button:hover {
+  color: #b9134f;
+}
+
+.dribbble {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .screen-body {
+    flex-direction: column;
+  }
+
+  .screen-body-item.left {
+    margin-bottom: 30px;
+  }
+
+  .app-title {
+    flex-direction: row;
+  }
+
+  .app-title span {
+    margin-right: 12px;
+  }
+
+  .app-title:after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screen-body {
+    padding: 40px;
+  }
+
+  .screen-body-item {
+    padding: 0;
+  }
+}
+
+/* Contact Us Part CSS Ends*/
+
+input {
+  outline: none;
+  border: none;
+}
+
+.searchbtnicon {
+  font-size: 16px;
+}
+.accicon {
+  font-size: 48px;
+}
+
+
+/* Loader */
+
+.emergencybtn {
+  border: none;
+  color: white;
+  width: 9em;
+  height: 9em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  bottom:16px;
+  right:16px;
+  position: fixed;
+  cursor: pointer;
+    background: linear-gradient(90deg,red,red,red,red);
+  border-radius:  100%;
+  z-index: 2;
+}

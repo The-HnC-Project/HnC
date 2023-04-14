@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+    <!-- Material Symbol -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap"
+      rel="stylesheet"
+    /> -->
+    <!-- import landingpage.css -->
+    <!-- Importing Language Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="shortcut icon" href="../images/favicon1.ico" />
+    <title>HnC</title>
+    <script defer src="../js/profile.js"></script>
+  </head>
+  <body>
+    <!-- <div class="loaderContainer">
+        <div id='css3-spinner-svg-pulse-wrapper'>
+            <svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='http://www.w3.org/2000/svg'
+                viewpo  rt='0 0 60 60' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                <path id='css3-spinner-pulse' stroke='#275DAD' fill='none' stroke-width='2' stroke-linejoin='round'
+                    d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' />
+            </svg>
+        </div>
+        </svg>
+    </div> -->
+    <div class="err" id="error">
+      <div class="closebtn" id="closeerrorbtn">&times;</div>
+    </div>
+    <div class="topnav">
+      <div class="tile">
+        <div class="imgs">
+          <img
+            src="../images/logo.png"
+            onclick="window.location.href='../'"
+            alt="/"
+          />
+        </div>
+        <h2>HnC</h2>
+      </div>
+      <div class="options">
+        <a
+          id="login"
+          onclick="localStorage.getItem('user') ? window.location.href='./profile.html' : window.location.href='./login.html'"
+          ><span class="material-symbols-outlined">account_circle</span></a
+        >
+      </div>
+    </div>
+    <div id="main">
+      <div id="Profile">
+        <div class="logo">
+          <img src="../images/guestlogo.jpg" alt="" id="profileAvatar" />
+          <form method="" action="" enctype="" id="imgupload">
+            <input
+              type="file"
+              name="img"
+              id="img"
+              accept="image/jpeg, image/png, image/jpg"
+            />
+            <input type="hidden" name="uid" id="hidid" value="" />
+            <button id="Upload">Upload</button>
+          </form>
+          <button id="logout">Logout</button>
+        </div>
+        <div class="details">
+          <section>
+            Name:
+            <div class="det" id="username"></div>
+          </section>
+          <div class="part">
+            <section>
+              Age:
+              <div class="det" id="age"></div>
+            </section>
+            <section>
+              Blood Group:
+              <div class="det" id="bloodGroup"></div>
+            </section>
+          </div>
+          <section>
+            Phone:
+            <div class="det" id="phone"></div>
+          </section>
+        </div>
+      </div>
+      <div id="MedHis"></div>
+    </div>
+
+    <div class="cen">
+      <div class="center">
+        <h2 style="text-align: center">Medical History</h2>
+
+        <!-- <div class="MedicalDet">
+          
+          <section class="detail">Hospital Name</section>
+          <section class="detail">Type</section>
+          <section class="detail">TypeValue</section>
+          <section class="detail">Date</section>
+          <section class="detail">Time</section>
+          <section class="detail">Payment</section>
+        </div> -->
+      </div>
+    </div>
+    <div id="profile" class="hide"></div>
+  </body>
+</html>

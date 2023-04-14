@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Material Icons -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        />
+        <!-- Material Symbol -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
+        />
+        <!-- import landingpage.css -->
+        <link rel="stylesheet" href="../css/medhis.css" />
+        <link rel="stylesheet" href="../css/navbar.css" />
+        <!-- Importing Language Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
+            rel="stylesheet"
+        />
+        <title>HnC</title>
+        <link rel="shortcut icon" href="favicon1.ico" />
+        <!-- Link the JavaScript File -->
+        <script defer src="../js/medhis.js"></script>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <div class="tile">
+                <div class="imgs">
+                    <img
+                        src="../images/logo.png"
+                        onclick="window.location.href='../'"
+                        alt="/"
+                    />
+                </div>
+                <h2>HnC</h2>
+            </div>
+            <div class="options">
+                <a
+                    onclick="localStorage.getItem('user') ? window.location.href='./profile.html' : window.location.href='./login.html'"
+                    id="login"
+                    >Login
+                    <span class="material-symbols-outlined" id="loginicon">
+                        login
+                    </span></a
+                >
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="overlay"></div>
+            <div class="leftside">
+                <h1 class="name" id="name">Hospital</h1>
+                <h5 class="address" id="address">Address</h5>
+                <h5 class="rating" id="rating">Rating: 5</h5>
+            </div>
+            <div class="rightside">
+                <h3 class="date">8 AM to 8 PM</h3>
+                <div class="viewonmap" id="viewmap">View on Map</div>
+            </div>
+        </div>
+        <form class="form" action="" method="post">
+                <label for="Name">Name</label>
+                <input name="Name" class="input" id="username" disabled></input>
+                <label for="Age">Age</label>
+                <input name="Age" class="input" id="age" disabled></input>
+                <label for="BloodGroup">Blood Group</label>
+                <input name="BloodGroup" type="text" class="input" id="bloodgroup" disabled/>
+                <label for="Phone">Phone</label>
+                <input name="Phone" type="text" class="input" id="phone" disabled>
+                <label for="Type">Type</label>
+                <select name="Type" id="type" class="select"></select>
+                <label for="Options">Options</label>
+                <select name="Options" id="typevalue" class="select"></select>
+            </form>
+            <script src="../js/list.js"></script>
+    </body>
+</html>

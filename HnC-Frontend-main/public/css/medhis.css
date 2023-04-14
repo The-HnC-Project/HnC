@@ -1,0 +1,109 @@
+/* import Exo 2 font */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.banner {
+    background: url(../images/hospital.avif) no-repeat center center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    height: 64vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.banner .leftside,.banner .rightside {
+    width: 50%;
+    height: auto;
+    display: flex;
+    gap:16px;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #fff;
+    z-index: 1;
+    padding: 16px;
+}
+
+
+.banner .rightside {
+    align-items: flex-end;
+}
+
+.viewonmap {
+    width:max-content;
+    height: 40px;
+    padding:20px;
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgb(255, 255, 255);
+    transition: 250ms;
+    border: 1px solid #fff;
+}
+
+.viewonmap:hover {
+    background-color: #fff;
+    color: #000;
+    transform:  scale(1.1);
+}
+
+.form {
+    margin-top: calc( 100vh - 64vh );
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: flex-start;
+    align-items: center;
+    width:75%;
+    border-radius: 16px;
+    background-color: #fafafa;
+    padding: 16px;
+    padding-bottom: 64px;
+    box-shadow: 0 0 8px rgb(0, 0, 0);
+    margin-bottom: 64px;
+}
+
+.form .input,.form .select {
+    display: flex;
+    gap: 8px;
+    width:75%;
+    height:40px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+}

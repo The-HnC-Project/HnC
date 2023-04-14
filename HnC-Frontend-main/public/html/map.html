@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/map.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+    <!-- Material Symbol -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
+    />
+    <script type="module" src="../js/map.js"></script>
+    <title>Map</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="tile">
+        <div class="imgs">
+          <img
+            src="../images/logo.png"
+            onclick="window.location.href='../'"
+            alt="/"
+          />
+        </div>
+        <h2>HnC</h2>
+      </div>
+      <div class="options">
+        <a
+          onclick="localStorage.getItem('user') ? window.location.href='./profile.html' : window.location.href='./login.html'"
+          id="login"
+          >Login
+          <span class="material-symbols-outlined" id="loginicon">
+            login
+          </span></a
+        >
+      </div>
+    </div>
+    <div id="map"></div>
+  </body>
+</html>
