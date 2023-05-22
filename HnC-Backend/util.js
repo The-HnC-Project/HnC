@@ -32,4 +32,6 @@ export function decrypt(hash, securitykey) {
 
   return decrpyted.toString();
 }
-
+export function giveRandom(mini, maxi) {
+  return Math.random() * (maxi - mini) + mini;
+}

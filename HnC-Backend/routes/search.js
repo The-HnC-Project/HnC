@@ -4,6 +4,7 @@ import { config } from "dotenv";
 config();
 const router = express.Router();
 const apikey = process.env.apikey;
+import fetch from "node-fetch";
 import { encrypt } from "../util.js";
 router.post("/", async (req, res) => {
   let { city, query } = req.body;
@@ -42,6 +43,26 @@ router.post("/", async (req, res) => {
   res.set("Access-Control-Allow-Headers", "*");
   res.set("Access-Control-Allow-Origin", "*");
   res.json(info);
+});
+
+router.post("/auto", async (req, res) => {
+  res.set("Access-Control-Allow-Headers", "*");
+  res.set("Access-Control-Allow-Origin", "*");
+  let { name, query } = req.body;
+  console.log(name, query);
+  if (!query.includes("Hospital")) {
+    query = "Hospital";
+  }
+  const data = await fetch(
+    `https://api.geoapify.com/v1/geocode/autocomplete?text=${name}+${query}&apiKey=${apikey}`
+  ).then((res) => res.json());
+
+  res.json(data);
+});
+router.options("/auto", (req, res) => {
+  res.set("Access-Control-Allow-Headers", "*");
+  res.set("Access-Control-Allow-Origin", "*");
+  res.json();
 });
 router.options("/", (req, res) => {
   res.set("Access-Control-Allow-Headers", "*");

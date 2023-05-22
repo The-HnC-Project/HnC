@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arimo", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.container {
+  /* width: 50%;
+  height: 60%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(164, 183, 128, 0.422); */
+}
+
+.innercnt {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.innercnt .text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+    /* grid-template-columns: 50% 50%; */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 16px;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.grid-container1 {
+  display: flex;
+  /* grid-template-columns: 50% 50%; */
+  width: 100%;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.grid-item1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: linear-gradient(to right, #cdd6c8 0%, #4698a6 51%, #335489d3 100%); */
+  /* background-image: linear-gradient(to right, #30332f8a 0%, #222d2ebd 51%, #00050cb6 100%); */
+  border: 2px solid rgba(0, 0, 0, 0.169);
+  background-color: rgba(0, 0, 0, 0.171);
+    box-shadow: 0 0 16px 1px rgba(225, 225, 225, 0.71);
+  color:#fafafa;
+  text-align: center;
+  gap: 0px;
+  padding: 4px;
+  border-radius: 16px;
+  width:100%;
+  height:128px;
+}
+
+.grid-item2 {
+  display: flex;
+  align-items: center;
+  /* background-image: linear-gradient(to right, #cdd6c8 0%, #4698a6 51%, #335489d3 100%); */
+  /* background-image: linear-gradient(to right, #30332f8a 0%, #222d2ebd 51%, #00050cb6 100%); */
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  text-align: left;
+  gap: 0px;
+  padding: 4px;
+  border-left: none;
+  border-radius: 8px;
+  height: 150px;
+}
+
+.grid-item {
+  /* background-image: linear-gradient(to right, #cdd6c8 0%, #4698a6 51%, #335489d3 100%); */
+  background-color: rgba(0, 0, 0, 0.171);
+  border: 2px solid rgba(0, 0, 0, 0.137);
+  box-shadow: 0 0 16px 1px rgba(225, 225, 225, 0.71);
+  text-align: center;
+  padding-bottom: 16px;
+  border-radius: 16px;
+  width:45%;
+}
+
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+}
+
+.head {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.btn1,
+.btn2,
+.btn3,
+.btn4 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 250ms;
+}
+
+button {
+  font-family: monospace;
+  font-size: 1rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background-color: #208dbc82;
+  border: 2px solid #208dbcd1;
+  cursor: pointer;
+}
+
+.head h1 {
+  font-size: 1.2rem;
+}
+
+.btn1:hover,
+.btn2:hover,
+.btn3:hover,
+.btn4:hover {
+  background-color: #208dbc;
+  border-radius: 10px;
+}
+
+/* Modal CSS Starts */
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 250px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(142, 88, 88);
+  /* Fallback color */
+  background-color: rgba(78, 51, 51, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 99%;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modaltext {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.modaltext .hosdetails {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Modal CSS Ends */
+
+@media only screen and (max-width: 689px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  .innercnt {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -275px;
+  }
+
+  .text h1 {
+    font-size: 25px;
+    margin-left: 40px;
+  }
+
+  .head {
+    padding: 10px;
+  }
+
+  .cont {
+    width: 200px;
+  }
+
+  .grid-container {
+    grid-template-columns: auto;
+    height: 200px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ 
+
+  .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    height: 150px;
+    width: 45%;
+  }
+
+  .modal-content {
+    margin-top: -100px;
+  }
+
+  .grid-item1 {
+    padding: 4px;
+    height: 150px;
+    width: 100%;
+  }
+
+  .grid-item2 {
+    padding: 4px;
+    height: 150px;
+    width: 150px;
+  }
+
+  .grid-item1 h1,
+  .grid-item2 h1 {
+    font-size: 20px;
+  }
+
+  .modal-content {
+    margin-top: -100px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+.blur {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}

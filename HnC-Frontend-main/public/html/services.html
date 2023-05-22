@@ -13,6 +13,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
     <!-- import landingpage.css -->
+        <link rel="stylesheet" href="../css/emergencybtnpopup.css">
     <link rel="stylesheet" href="../css/services.css">
         <link rel="stylesheet" href="../css/navbar.css" />
     <!-- Importing Language Fonts -->
@@ -24,6 +25,9 @@
     <!-- Linking JavaScript File -->
         <script src="../js/cities.js"></script>
     <script defer src="../js/services.js"></script>
+    <script defer src="../js/emergencybtnpopup.js"></script>
+    <link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#333" />
 </head>
 
 <body>
@@ -40,10 +44,7 @@
         </div>
     </div>
         <div class="emergencybtn">
-            <!-- <div class="circle">
-                <span class="content">Emergency Button</span>
-            </div> -->
-            <!-- <button class="circle">Emergency Button</button> -->
+           
             <button class="cld">
                 <span class="content">Emergency Button</span>
             </button>
@@ -83,28 +84,32 @@
 <div class="con" id="firstcon">
         <div class="cent">
           <div class="dropdown">
-            <select onclick="myFunction()" class="dropbtn" id="dropbtn" dropzone="" contenteditable="true">
-                            <!-- <select class="cityName" contenteditable="true">KANPUR</select>
-              <span class="material-symbols-outlined"> arrow_drop_down </span> -->
-
-              
+            <input class="dropbtn disable" type="text" placeholder="Enter Your Pin Code Here" name="search" id="input" style="color:black; font-weight: 500;"/>
+            <select
+              class="dropbtn"
+              id="dropbtn"
+              dropzone=""
+              contenteditable="true"
+            >
             </select>
-            
-            
           </div>
-          <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
           <form class="example" action="" method="get">
             <input
-              type="text"
+            list="possible"
+              type="search"
               placeholder="Search hospitals near you"
               name="search"
               class="search"
             />
-            <button type="submit" class="btn" id="btn">
-              <span class="searchbtnicon material-symbols-outlined">
+            <datalist id="possible">
+              
+            </datalist>
+            <div class="btn">
+              <div  id="changetype" >Search by Pincode</div>
+              <button id="btn" type="submit" class="searchbtnicon material-symbols-outlined">
                 search
-              </span>
-            </button>
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -125,95 +130,151 @@
 
     <div class="hospitals">
         <div class="collection">
-            <!-- <div class="card">
-                <div class="image">
-                    <img src="../images/hospital-1.jpg" alt="" />
-                </div>
-                <div class="finfo">
-                    <div class="top">
-                        <h4><b>Hospital Name</b></h4>
-                        <br />
-                        <p><b>Address:</b></p>
-                        <br />
-                        <p id="starlc">
-                            <b>Rating:</b>
-                            <span class="material-symbols-outlined" id="stars">
-                                star
-                            </span>
-                            <span class="material-symbols-outlined" id="stars">
-                                star
-                            </span>
-                            <span class="material-symbols-outlined" id="stars">
-                                star
-                            </span>
-                            <span class="material-symbols-outlined" id="stars">
-                                star
-                            </span>
-                            <span class="material-symbols-outlined" id="stars">
-                                star
-                            </span>
-                        </p>
-                    </div>
-                    <div class="bottom">
-                        <button>
-                            <span>Available</span>
-                        </button>
-                    </div>
-                </div>
-            </div> -->
+            
         </div>
     </div>
-    <!-- Purana Footer Section Starts -->
-    <!-- <div class="background">
-        <div class="con">
-            <div class="screen">
-                <div class="screen-header">
-                    <div class="screen-header-left">
-                        <div class="screen-header-button close"></div>
-                        <div class="screen-header-button maximize"></div>
-                        <div class="screen-header-button minimize"></div>
-                    </div>
-                    <div class="screen-header-right">
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                    </div>
-                </div>
-                <div class="screen-body">
-                    <div class="screen-body-item left">
-                        <div class="app-title">
-                            <span>Want To Contribute</span>
-                            <span>Write Us At</span>
-                        </div>
-                        <div class="app-contact">Mail Us At: HnC@gmail.com</div>
-                    </div>
-                    <div class="screen-body-item">
-                        <div class="app-form">
-                            <div class="app-form-group">
-                                <input class="app-form-control" placeholder="NAME">
-                            </div>
-                            <div class="app-form-group">
-                                <input class="app-form-control" placeholder="EMAIL">
-                            </div>
-                            <div class="app-form-group">
-                                <input class="app-form-control" placeholder="CONTACT NO">
-                            </div>
-                            <div class="app-form-group message">
-                                <input class="app-form-control" placeholder="MESSAGE">
-                            </div>
-                            <div class="app-form-group buttons">
-                                <button class="app-form-button">CANCEL</button>
-                                <button class="app-form-button">SEND</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    
+    </div>
+     <div class="wrapper hidden">
+      <div class="container">
+        <div class="innercnt">
+          <!-- <div class="text">
+                    <h1>Select Emergency Service Required</h1>
+                </div> -->
+          <div class="grid-container1">
+            <div class="grid-item1">
+              <h1>Select Emergency</h1>
             </div>
+          </div>
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="cont">
+                <div class="head">
+                  <h1>Heart Attack</h1>
+                </div>
+                <div class="btn1" id="b1">
+                  <button class="emer">Click Here</button>
+                </div>
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="modaltext">
+                    <span
+                      >Your response has been recorded and the nearest hospital
+                      providing these emergency services has been alerted.</span
+                    >
+                    <span>
+                      The details for the hospital alerted are:
+                      <div class="hosdetails">
+                        <!-- <span>Hospital Name:</span>
+                        <span>Hospital Addresss:</span> -->
+                      </div>
+                    </span>
+                    <span> Thank you for using our services. </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="cont">
+                <div class="head">
+                  <h1>Seizures</h1>
+                </div>
+                <div class="btn2" id="b2">
+                  <button class="emer">Click Here</button>
+                </div>
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="modaltext">
+                    <span
+                      >Your response has been recorded and the nearest hospital
+                      providing these emergency services has been alerted.</span
+                    >
+                    <span>
+                      The details for the hospital alerted are:
+                      <div class="hosdetails">
+                        <span>Hospital Name:</span>
+                        <span>Hospital Addresss:</span>
+                      </div>
+                    </span>
+                    <span> Thank you for using our services. </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="cont">
+                <div class="head">
+                  <h1>Accident</h1>
+                </div>
+                <div class="btn3" id="b3">
+                  <button class="emer">Click Here</button>
+                </div>
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="modaltext">
+                    <span
+                      >Your response has been recorded and the nearest hospital
+                      providing these emergency services has been alerted.</span
+                    >
+                    <span>
+                      The details for the hospital alerted are:
+                      <div class="hosdetails">
+                        <span>Hospital Name:</span>
+                        <span>Hospital Addresss:</span>
+                      </div>
+                    </span>
+                    <span> Thank you for using our services. </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="cont">
+                <div class="head">
+                  <h1>Other</h1>
+                </div>
+                <div class="btn4" id="b4">
+                  <button class="emer">Click Here</button>
+                </div>
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="modaltext">
+                    <span
+                      >Your response has been recorded and the nearest hospital
+                      providing these emergency services has been alerted.</span
+                    >
+                    <span>
+                      The details for the hospital alerted are:
+                      <div class="hosdetails">
+                        <span>Hospital Name:</span>
+                        <span>Hospital Address:</span>
+                      </div>
+                    </span>
+                    <span> Thank you for using our services. </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div> -->
-   
+      </div>
     </div>
-
 </body>
 
 </html>

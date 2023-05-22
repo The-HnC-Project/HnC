@@ -1,28 +1,26 @@
 import express from "express";
-const app = express();
 import { config } from "dotenv";
 config();
 const router = express.Router();
 const apikey = process.env.apikey;
-app.use(express.json());
-
-import fetch from "node-fetch"
-console.log(fetch);
+import fetch from "node-fetch";
 router.post("/", async (req, res) => {
-  const { lat, long } = req.body;
-  const exactloc = await fetch(
-      `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${long}&apiKey=${process.env.apikey}`
-    )
-    .then((r) => r.json());
   res.set("Access-Control-Allow-Headers", "*");
   res.set("Access-Control-Allow-Origin", "*");
-  res.json(exactloc);
+  const { fromWaypoint, towaypoint } = req.body;
+  console.log(fromWaypoint, towaypoint);
+  const data = await fetch(
+    `https://api.geoapify.com/v1/routing?waypoints=${fromWaypoint.join(
+      ","
+    )}|${towaypoint.join(",")}&mode=drive&apiKey=${apikey}`
+  ).then((res) => res.json());
+  res.json(data);
 });
+
 router.options("/", (req, res) => {
   res.set("Access-Control-Allow-Headers", "*");
   res.set("Access-Control-Allow-Origin", "*");
   res.json();
 });
-export default router;
 
-//
+export default router;

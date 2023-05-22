@@ -9,13 +9,29 @@
 }
 body,
 html {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 64px;
+  height: 100%;
   width: 100%;
 }
+
+.wrap {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+        background-image: 
+     radial-gradient(
+    circle at top left,
+        #ffffff 10%,
+        #e4e4e4 30%,
+        #ffffff 20%,
+        #cbcbcb 75%,
+        #3c3c3c
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #main,
 .cen {
   display: flex;
@@ -25,6 +41,8 @@ html {
   height: 100%;
   /* gap: 64px; */
   flex-direction: column;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 #Profile {
   display: flex;
@@ -33,9 +51,10 @@ html {
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.19), 0 0.6em 0.6em rgba(0, 0, 0, 0.23);
   width: 90%;
   height: 600px;
-  padding: 32px;
-
-  border-radius: 32px;
+  padding: 2%;
+  margin-top: 64px;
+  border-radius: 16px;
+  background-color: #fff;
 }
 
 #Profile img {
@@ -86,8 +105,9 @@ html {
   width: 100%;
   padding: 0.5em;
   padding-left: 1em;
-  background-color: gainsboro;
+  background-color: lavender;
   box-sizing: border-box;
+  border-radius: 16px;
 }
 .part section .det {
   width: 100%;
@@ -96,6 +116,7 @@ html {
   padding: 16px;
   width: 60%;
   border-radius: 32px;
+  background: #fff;
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.19), 0 0.6em 0.6em rgba(0, 0, 0, 0.23);
 }
 .center {
@@ -104,10 +125,11 @@ html {
   justify-content: space-evenly;
   align-items: center;
   font-size: 1.5em;
+  background-color: #fff;
   width: 94%;
   height: auto;
   min-height: 500px;
-  border-radius: 32px;
+  border-radius: 16px;
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.19), 0 0.6em 0.6em rgba(0, 0, 0, 0.23);
   gap: 64px;
   padding-top: 32px;
@@ -262,4 +284,55 @@ button:active {
 }
 .etext {
   padding: 16px;
+}
+
+
+.picup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/126/126477.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+#imgupload {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:8px;
+}
+
+#file-chosen {
+  margin-right: 8px;
+}
+
+@media only screen and (max-width:689px) {
+  .det {
+    width:auto;
+  }
+
+  #Profile {
+    width:100%;
+    height:auto;
+    padding: 0;
+    padding-top:16px;
+    padding-bottom:16px;
+  }
+
+  #Profile img {
+    width:200px;
+    height:200px;
+  }
+
+  .logo {
+    margin-top: 16px;
+  }
 }

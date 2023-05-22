@@ -1,5 +1,5 @@
 const list = {
-    test: [
+    Test: [
         "Complete Blood Test",
         "Lipid Profile",
         "Diabetes Panel",
@@ -10,7 +10,7 @@ const list = {
         "Bone Mineral Test",
         "Diseases Markers",
     ],
-    scan: [
+    Scan: [
         "MRI",
         "X-Ray",
         "CT Scan",
@@ -23,7 +23,7 @@ const list = {
         "ECG",
         "EEG",
     ],
-    procedure: [
+    Procedure: [
         "Cataract Surgery",
         "Knee Replacement",
         "Hip Replacement",

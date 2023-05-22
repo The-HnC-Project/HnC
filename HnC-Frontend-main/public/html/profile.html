@@ -42,18 +42,10 @@
     <link rel="shortcut icon" href="../images/favicon1.ico" />
     <title>HnC</title>
     <script defer src="../js/profile.js"></script>
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#333" />
   </head>
   <body>
-    <!-- <div class="loaderContainer">
-        <div id='css3-spinner-svg-pulse-wrapper'>
-            <svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='http://www.w3.org/2000/svg'
-                viewpo  rt='0 0 60 60' xmlns:xlink='http://www.w3.org/1999/xlink'>
-                <path id='css3-spinner-pulse' stroke='#275DAD' fill='none' stroke-width='2' stroke-linejoin='round'
-                    d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' />
-            </svg>
-        </div>
-        </svg>
-    </div> -->
     <div class="err" id="error">
       <div class="closebtn" id="closeerrorbtn">&times;</div>
     </div>
@@ -66,7 +58,7 @@
             alt="/"
           />
         </div>
-        <h2>HnC</h2>
+        <h2 class="tracking-in-expand">HnC</h2>
       </div>
       <div class="options">
         <a
@@ -76,51 +68,55 @@
         >
       </div>
     </div>
-    <div id="main">
-      <div id="Profile">
-        <div class="logo">
-          <img src="../images/guestlogo.jpg" alt="" id="profileAvatar" />
-          <form method="" action="" enctype="" id="imgupload">
-            <input
-              type="file"
-              name="img"
-              id="img"
-              accept="image/jpeg, image/png, image/jpg"
-            />
-            <input type="hidden" name="uid" id="hidid" value="" />
-            <button id="Upload">Upload</button>
-          </form>
-          <button id="logout">Logout</button>
-        </div>
-        <div class="details">
-          <section>
-            Name:
-            <div class="det" id="username"></div>
-          </section>
-          <div class="part">
+    <div class="wrap">
+      <div id="main">
+        <div id="Profile">
+          <div class="logo">
+            <img src="../images/guestlogo.jpg" alt="" id="profileAvatar" />
+            <form method="" action="" enctype="" id="imgupload">
+              <label for="img" class="picup"></label>
+              <input
+                type="file"
+                name="img"
+                id="img"
+                accept="image/jpeg, image/png, image/jpg"
+                hidden
+              />
+              <span id="file-chosen">No file chosen</span>
+              <input type="hidden" name="uid" id="hidid" value="" />
+              <button id="Upload">Upload</button>
+            </form>
+            <button id="logout">Logout</button>
+          </div>
+          <div class="details">
             <section>
-              Age:
-              <div class="det" id="age"></div>
+              Name:
+              <div class="det" id="username"></div>
             </section>
+            <div class="part">
+              <section>
+                Age:
+                <div class="det" id="age"></div>
+              </section>
+              <section>
+                Blood Group:
+                <div class="det" id="bloodGroup"></div>
+              </section>
+            </div>
             <section>
-              Blood Group:
-              <div class="det" id="bloodGroup"></div>
+              Phone:
+              <div class="det" id="phone"></div>
             </section>
           </div>
-          <section>
-            Phone:
-            <div class="det" id="phone"></div>
-          </section>
         </div>
+        <div id="MedHis"></div>
       </div>
-      <div id="MedHis"></div>
-    </div>
 
-    <div class="cen">
-      <div class="center">
-        <h2 style="text-align: center">Medical History</h2>
+      <div class="cen">
+        <div class="center" id="center2">
+          <h2 style="text-align: center">Appointments</h2>
 
-        <!-- <div class="MedicalDet">
+          <!-- <div class="MedicalDet">
           
           <section class="detail">Hospital Name</section>
           <section class="detail">Type</section>
@@ -129,6 +125,21 @@
           <section class="detail">Time</section>
           <section class="detail">Payment</section>
         </div> -->
+        </div>
+      </div>
+      <div class="cen">
+        <div class="center" id="center1">
+          <h2 style="text-align: center">Medical History</h2>
+
+          <!-- <div class="MedicalDet">
+            <section class="detail">Hospital Name</section>
+            <section class="detail">Type</section>
+            <section class="detail">TypeValue</section>
+            <section class="detail">Date</section>
+            <section class="detail">Time</section>
+            <section class="detail">Payment</section>
+          </div> -->
+        </div>
       </div>
     </div>
     <div id="profile" class="hide"></div>

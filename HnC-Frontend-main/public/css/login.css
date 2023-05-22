@@ -45,7 +45,7 @@ body {
 .box {
   background-color: #ffffff;
   width: 500px;
-  height: 500px;
+  height: 589px;
   border-radius: 10px;
   display: flex;
   justify-content: flex-start;
@@ -89,6 +89,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 16px;
+  cursor: pointer;
 }
 
 .logo img {
@@ -215,13 +216,13 @@ span {
 }
 textarea:required:invalid,
 input:required:invalid {
-  background-color: rgba(255, 144, 144, 0.5);
+  background-color: lavender;
 }
 
 @media only screen and (max-width: 550px) {
   .box {
     width: 90%;
-    height: 500px;
+    height: 589px;
   }
 
   .err {

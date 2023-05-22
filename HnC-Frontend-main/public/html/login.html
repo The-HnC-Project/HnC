@@ -21,6 +21,7 @@
       href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
     />
     <link rel="stylesheet" href="style.css" />
+     <script src="https://www.google.com/recaptcha/api.js"></script>
 
 <head>
   <meta charset="UTF-8">
@@ -37,6 +38,8 @@
 
   <title>Login</title>
   <link rel="shortcut icon" href="..\images\favicon1.ico" >
+  <link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#333" />
 </head>
 
 <body>
@@ -45,9 +48,9 @@
   <div class="err" id="error">
     <div class="closebtn" id="closeerrorbtn">&times;</div>
   </div>
-  <form action="" class="box">
+  <form action="" class="box demo-form">
     <div class="logo">
-    <img src="..\images\logo.png" alt="/">
+    <a href="../index.html"><img src="..\images\logo.png" alt="/"></a> 
     </div>
     <div class="fields">
 
@@ -57,14 +60,16 @@
     <input type="password" class="password" id="pass" required minlength="8">
     </div>
     <a href="" class="forgor">Forgot Password...</a>
-
+<div class="g-recaptcha"
+       data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
     <button type="submit" class="btn" id="login">Login</button>
        <button type="button" class="btn2" id="guest">Continue as Guest  
 </button>
-    <div class="text"><span>new user?</span>&nbsp;&nbsp;<a href="./register.html" class="signup">Sign-Up</a></div>
+    <div class="text"><span>New User?</span>&nbsp;&nbsp;<a href="./register.html" class="signup">Sign Up</a></div>
     </form>
  </div>
  <script src="..\js\login.js"></script>
+
 </body>
 
 </html>

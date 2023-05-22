@@ -11,6 +11,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import fetch from "node-fetch";
 import { decrypt } from "../util.js";
 import db from "../firebase.js";
 
@@ -26,7 +27,7 @@ router.post("/", async (req, res) => {
     const decrypted = decrypt(data.password, process.env.securityKey);
     console.log(decrypted, password);
     if (decrypted === password) {
-      return res.json({
+      res.json({
         status: 200,
         data: {
           username: data.username,
@@ -36,16 +37,15 @@ router.post("/", async (req, res) => {
           uid: data.uid,
           medHistory: data.medHistory,
         },
-         token: data.token.iv+"."+data.token.data,
+        token: data.token.iv + "." + data.token.data,
       });
     } else {
-	    return res.status(400).json({ status: 400, message: "Wrong username/password" });
-	   
+      res.status(400).json({ status: 400, message: "Wrong username/password" });
     }
   } else {
-return res.status(400).json({ status: 400, message: "Wrong username/password" });
+    res.status(400).json({ status: 400, message: "Wrong username/password" });
   }
-  
+  res.json();
 });
 router.options("/", (req, res) => {
   res.set("Access-Control-Allow-Headers", "*");

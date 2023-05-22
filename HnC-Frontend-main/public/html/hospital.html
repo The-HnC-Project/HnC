@@ -32,10 +32,13 @@
             href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
             rel="stylesheet"
         />
+        <link rel="icon" href="../images/favicon1.ico">
         <title>HnC</title>
-        <link rel="shortcut icon" href="favicon1.ico" />
+        <link rel="shortcut icon" href="/public/images/favicon1.ico">
         <!-- Link the JavaScript File -->
         <script defer src="../js/medhis.js"></script>
+        <link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#333" />
     </head>
 
     <body>
@@ -48,7 +51,7 @@
                         alt="/"
                     />
                 </div>
-                <h2>HnC</h2>
+                <h2 class="tracking-in-expand">HnC</h2>
             </div>
             <div class="options">
                 <a
@@ -62,32 +65,52 @@
             </div>
         </div>
 
-        <div class="banner">
+        <div class="banner roll-in">
             <div class="overlay"></div>
-            <div class="leftside">
+            <div class="leftside ">
                 <h1 class="name" id="name">Hospital</h1>
                 <h5 class="address" id="address">Address</h5>
                 <h5 class="rating" id="rating">Rating: 5</h5>
             </div>
-            <div class="rightside">
+            <div class="rightside ">
                 <h3 class="date">8 AM to 8 PM</h3>
-                <div class="viewonmap" id="viewmap">View on Map</div>
+                <div class="viewonmap" id="viewmap">
+                    View on Map  
+                    <span class="material-symbols-outlined">explore</span>
+                </div>
             </div>
         </div>
-        <form class="form" action="" method="post">
-                <label for="Name">Name</label>
-                <input name="Name" class="input" id="username" disabled></input>
-                <label for="Age">Age</label>
-                <input name="Age" class="input" id="age" disabled></input>
-                <label for="BloodGroup">Blood Group</label>
-                <input name="BloodGroup" type="text" class="input" id="bloodgroup" disabled/>
-                <label for="Phone">Phone</label>
-                <input name="Phone" type="text" class="input" id="phone" disabled>
-                <label for="Type">Type</label>
-                <select name="Type" id="type" class="select"></select>
-                <label for="Options">Options</label>
-                <select name="Options" id="typevalue" class="select"></select>
+        <div class="wrap">
+        <div id="hosInfo"></div>
+        <form class="form" id="formming">
+            <div class="head">Book An Appointment</div>
+                <div class="inputs">
+                    <label for="Name">Name</label>
+                    <input name="Name" class="input" id="username" disabled></input>
+                </div>
+                <div class="inputs">
+                    <label for="Age">Age</label>
+                    <input name="Age" class="input" id="age" disabled></input>
+                </div>
+                <div class="inputs">
+                    <label for="BloodGroup">Blood Group</label>
+                    <input name="BloodGroup" type="text" class="input" id="bloodgroup" disabled/>
+                </div>
+                <div class="inputs">
+                    <label for="Phone">Phone</label>
+                    <input name="Phone" type="text" class="input" id="phone" disabled>
+                </div>
+                <div class="inputs">
+                    <label for="Type">Type</label>
+                    <select name="Type" id="type" class="select"></select>
+                </div>
+                <div class="inputs">
+                    <label for="Options">Options</label>
+                    <select name="Options" id="typevalue" class="select"></select>
+                </div>
+                <input type="submit" value="Submit" class="btn2" id="guest"/>
             </form>
+        </div>
             <script src="../js/list.js"></script>
     </body>
 </html>

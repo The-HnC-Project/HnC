@@ -24,8 +24,22 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
     <script type="module" src="../js/map.js"></script>
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#333" />
     <title>Map</title>
+    <style></style>
   </head>
   <body>
     <div class="topnav">
@@ -51,5 +65,139 @@
       </div>
     </div>
     <div id="map"></div>
+    <script type="module">
+      const getLoc = new Promise((res, rej) => {
+        navigator.geolocation.getCurrentPosition(
+          (e) => {
+            res(e);
+          },
+          (e) => {
+            rej("Location Access Denied With Error: " + e.message);
+          }
+        );
+      });
+      const login = document.getElementById("login");
+
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        login.innerHTML = `${user.username}
+                <span class="material-symbols-outlined" id="loginicon">
+                  login
+                </span>`;
+      }
+
+      const id = new URLSearchParams(window.location.search).get("id");
+      const [b, hospitalinfo] = id.split(":");
+
+      const data = await fetch("https://api-hnc.onrender.com/api/hospital", {
+        method: "POST",
+        body: JSON.stringify({ hospitalinfo, b }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((r) => r.json());
+      const arr = data.data2.split(":");
+      console.log(arr);
+      console.log(arr[0]);
+      const [lat, lng] = arr[1].split(",").map((x) => parseFloat(x));
+      // ------------------------------------MAP------------------------------------
+
+      const getUserLoc = async () => {
+        const points = await getLoc;
+        let lo = points.coords.latitude;
+        let ln = points.coords.longitude;
+        return [lo, ln];
+      };
+      const [latt, long] = await getUserLoc();
+      let map = L.map("map").setView([latt, long], 13);
+      // const isRetina = L.Browser.retina;
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution:
+          '&copy; <a href=  "http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+      const fromWaypoint = [latt, long];
+      const fromWaypointMarker = L.marker(fromWaypoint, { color: "red" })
+        .addTo(map)
+        .bindPopup("You Are Here");
+      const towaypoint = [lat, lng];
+      const toWaypointMarker = L.marker(towaypoint)
+        .addTo(map)
+        .bindPopup(`${arr[0]}, ${arr[5]}`);
+
+      const turnByTurnMarkerStyle = {
+        radius: 5,
+        fillColor: "#fff",
+        color: "#555",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 1,
+      };
+      // Request To backend For Routing
+      const getRoute = async () => {
+        const data = await fetch("https://api-hnc.onrender.com/api/route", {
+          method: "POST",
+          body: JSON.stringify({ fromWaypoint, towaypoint }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then((r) => r.json());
+        return data;
+      };
+      const route = await getRoute();
+      console.log(route);
+      L.geoJSON(route, {
+        style: (feature) => {
+          return {
+            color: "rgba(20, 137, 255, 0.7)",
+            weight: 5,
+          };
+        },
+      })
+        .bindPopup((layer) => {
+          return `${layer.feature.properties.distance} ${layer.feature.properties.distance_unit}, ${layer.feature.properties.time}`;
+        })
+        .addTo(map);
+      const turnByTurns = [];
+      route.features.forEach((feature) =>
+        feature.properties.legs.forEach((leg, legIndex) =>
+          leg.steps.forEach((step) => {
+            const pointFeature = {
+              type: "Feature",
+              geometry: {
+                type: "Point",
+                coordinates:
+                  feature.geometry.coordinates[legIndex][step.from_index],
+              },
+              properties: {
+                instruction: step.instruction.text,
+              },
+            };
+            turnByTurns.push(pointFeature);
+          })
+        )
+      );
+      L.geoJSON(
+        {
+          type: "FeatureCollection",
+          features: turnByTurns,
+        },
+        {
+          pointToLayer: function (feature, latlng) {
+            return L.circleMarker(latlng, turnByTurnMarkerStyle);
+          },
+        }
+      )
+        .bindPopup((layer) => {
+          return `${layer.feature.properties.instruction}`;
+        })
+        .addTo(map);
+      if (user) {
+        login.innerHTML = `${user.username}
+            <span class="material-symbols-outlined" id="loginicon">
+              login
+            </span>`;
+      }
+    </script>
   </body>
 </html>

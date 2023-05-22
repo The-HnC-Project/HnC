@@ -7,6 +7,7 @@ const router = express.Router();
 import db from "../firebase.js";
 import { collection, addDoc, setDoc, doc, getDoc } from "firebase/firestore";
 import { randomSixDigitNumber, encrypt } from "../util.js";
+import fetch from "node-fetch";
 router.post("/", async (req, res) => {
   const { name, age, bloodgroup, phone, password } = req.body;
   res.set("Access-Control-Allow-Headers", "*");
@@ -15,11 +16,11 @@ router.post("/", async (req, res) => {
   const encrypted = encrypt(string, process.env.securityKey);
   const encryptPass = encrypt(password, process.env.securityKey);
   const uid = crypto.randomBytes(32).toString("hex");
-  // yahan pe firebase mein data jaega
+
   let medHistory = [];
   const existingDocRef = doc(db, "users", phone);
   const snap = await getDoc(existingDocRef);
-  if ((snap.exists())) {
+  if (snap.exists()) {
     res.status(400).json({ status: 400, message: "User already exists" });
   }
   const docref = await setDoc(doc(db, "users", phone), {
@@ -36,7 +37,7 @@ router.post("/", async (req, res) => {
   res.json({
     status: 200,
     data: {
-      username: name,  
+      username: name,
       phone: phone,
       age,
       bloodgroup,
@@ -46,6 +47,7 @@ router.post("/", async (req, res) => {
     token: encrypted.iv + "." + encrypted.data,
   });
 });
+
 router.options("/", (req, res) => {
   res.set("Access-Control-Allow-Headers", "*");
   res.set("Access-Control-Allow-Origin", "*");
