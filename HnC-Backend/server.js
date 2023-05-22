@@ -25,6 +25,8 @@ import login from "./routes/login.js";
 import hospital from "./routes/hospital.js";
 import formSubmit from "./routes/formsubmit.js";
 import route from "./routes/route.js";
+import upload from "./routes/upload.js";
+import image from "./routes/image.js";
 app.use("/api/hospitals", hospitals);
 app.use("/api/userLoc", revgeo);
 app.use("/api/search", search);
@@ -34,6 +36,8 @@ app.use("/api/login", login);
 app.use("/api/hospital", hospital);
 app.use("/api/route", route);
 app.use("/api/formsubmit", formSubmit);
+app.use("/api/upload", upload);
+app.use("/images", image);
 app.get("/", (_, res) => {
   res.json({ "Kya hua?": "Chaunk gye kya?" });
 });

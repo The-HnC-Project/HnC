@@ -114,8 +114,8 @@ const showdata = (profileData) => {
         });
     }
     console.log(data.username);
-    if (data.appointments.length) {
-        data.appointments.forEach((e) => {
+    if (data.appointments?.length) {
+        data.appointments?.forEach((e) => {
             cardCreation2(e);
         });
     } else {
@@ -178,7 +178,7 @@ btnup.addEventListener("click", async (e) => {
         body: formData,
         headers: {
             "x-uid": hidid.value,
-            Authorization: `Bearer ${user.token}`,
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
     }).then((e) => e.json());
     console.log(imgLink);

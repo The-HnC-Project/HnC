@@ -5,7 +5,7 @@ config();
 const router = express.Router();
 const apikey = process.env.apikey;
 import fetch from "node-fetch";
-import { encrypt } from "../util.js";
+import { encrypt, giveRandom } from "../util.js";
 router.post("/", async (req, res) => {
   let { city, query } = req.body;
   query = !query ? "hospital" : query;
@@ -28,7 +28,8 @@ router.post("/", async (req, res) => {
   const start = "0600";
   const end = "1800";
   for (let i of info.results) {
-    const rating = (Math.floor(Math.random() * 3) + 3).toFixed(1);
+    // const rating = (Math.floor(Math.random() * 3) + 3).toFixed(1);
+    const rating = giveRandom(1, 5, 1);
 
     i.rating = rating;
     const status = ["Available", "Unavailable"][Math.round(Math.random())];

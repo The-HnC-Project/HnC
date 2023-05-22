@@ -2,8 +2,8 @@ import express from "express";
 import { config } from "dotenv";
 import multer from "multer";
 import path from "path";
-import users from "../db.js";
 import { collection, addDoc, setDoc, doc, getDoc } from "firebase/firestore";
+import db from "../firebase.js";
 import fetch from "node-fetch";
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -47,7 +47,7 @@ router.post("/", upload.single("img"), async (req, res) => {
 
   res.json({
     hasProfile: true,
-    imgLink: "https://HnC-Backend.pancham1305.repl.co/images/" + req.body.uid,
+    imgLink: "http://34.131.197.143/images/" + req.body.uid,
   });
 });
 router.options("/", (req, res) => {
