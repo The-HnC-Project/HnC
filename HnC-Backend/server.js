@@ -41,6 +41,6 @@ app.use("/images", image);
 app.get("/", (_, res) => {
   res.json({ "Kya hua?": "Chaunk gye kya?" });
 });
-app.listen(process.env.PORT || 50000, (e) => {
+app.listen(80, (e) => {
   console.log("Server Started...");
 });

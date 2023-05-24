@@ -204,7 +204,7 @@ formming?.addEventListener("submit", async (e) => {
         typeValue: typevalue.value,
         hospital: hospitalName,
         date: new Date().toLocaleString(),
-        endpoint: "/formsubmit",
+        endpoint: "/api/formsubmit",
     };
 
     console.log(data);

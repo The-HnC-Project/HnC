@@ -44,6 +44,7 @@
   width: 100%;
   align-items: center;
   transition: 250ms;
+  padding: 16px;
 }
 
 .topnav .loginicon {
@@ -52,6 +53,7 @@
   height: 30px;
   width: 30px;
   color: rgb(206, 206, 206);
+  padding-left:16px;
   /* margin-top: 5px; */
 }
 

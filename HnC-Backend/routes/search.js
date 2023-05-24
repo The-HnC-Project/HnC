@@ -10,26 +10,29 @@ router.post("/", async (req, res) => {
   let { city, query } = req.body;
   query = !query ? "hospital" : query;
 
-  let url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${
-    query + " " + city
+  let url = `https://api.geoapify.com/v1/geocode/search?text=${
+    query.toLowerCase() + " " + city.toLowerCase()+" india"
   }&format=json&apiKey=${apikey}`;
 
   url = encodeURI(url);
   let info = await fetch(url).then((e) => e.json());
-  // console.log(info);
-  info.results = info.results.filter((x) => {
-    if (x.category != undefined) {
-      return (
-        x.category.includes("healthcare") || x.category.includes("hospital")
-      );
+   console.log(info);
+  info.results = info.results.filter((x) => x.country_code === "in");
+  info.results = info.results.map((x) => {
+    if (!x.name) {
+      x.name = x.formatted.split(",")[0];
     }
+    if(!x.name.toLowerCase().includes("hospital")) return null;
+    return x;
   });
+
+  info.results = info.results.filter((x) => x !== null);
   const status = "Available";
   const start = "0600";
   const end = "1800";
   for (let i of info.results) {
     // const rating = (Math.floor(Math.random() * 3) + 3).toFixed(1);
-    const rating = giveRandom(1, 5, 1);
+    const rating = giveRandom(1, 5).toFixed(1);
 
     i.rating = rating;
     const status = ["Available", "Unavailable"][Math.round(Math.random())];
@@ -43,6 +46,7 @@ router.post("/", async (req, res) => {
 
   res.set("Access-Control-Allow-Headers", "*");
   res.set("Access-Control-Allow-Origin", "*");
+  console.log(info);
   res.json(info);
 });
 

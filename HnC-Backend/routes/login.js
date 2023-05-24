@@ -36,6 +36,7 @@ router.post("/", async (req, res) => {
           bloodgroup: data.bloodgroup,
           uid: data.uid,
           medHistory: data.medHistory,
+          hasProfile: data.hasProfile || false,
         },
         token: data.token.iv + "." + data.token.data,
       });

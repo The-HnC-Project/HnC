@@ -115,7 +115,7 @@ const showdata = (profileData) => {
     }
     console.log(data.username);
     if (data.appointments?.length) {
-        data.appointments?.forEach((e) => {
+        data.appointments?.reverse()?.forEach((e) => {
             cardCreation2(e);
         });
     } else {
