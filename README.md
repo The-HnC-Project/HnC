@@ -21,6 +21,28 @@
 -> The link for the research has been attached for reference : [Research Link](https://radhee.com/advocacy/morth-road-safety/#:~:text=Every%20day%20in%20India%2C%2024%2C012,to%20help%20the%20critical%20patients.)
 
 - This is site is under constant upgradation from our side, as data collection from the hospitals need time and resources, we will be focusing on implementing the same in the near future to the best of our abilities.
+
+## Tech Stack:
+- FrontEnd:
+    - HTML
+    - CSS
+    - JavaScript
+- Proxy:
+   - Deno runtime
+   - Serve
+- BackEnd:
+  - NodeJS
+  - ExpressJS
+  - Multer
+  - Cors
+  - Undici ( native fetch api )
+  - FireStore
+- Rest Apis and Libraries:
+  - Google Recaptcha v3
+  - Geoapify
+  - openStreetMap
+  - api.postalCode
+
 ## Team:
 
 >* Tushar Bharti
